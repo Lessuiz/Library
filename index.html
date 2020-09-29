@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Library</h1>
+    </nav>
+  </header>
+  <main>
+    <div class="books-div">
+      <table class="books">
+        <tr>
+          <th>id</th>
+          <th>title</th>
+          <th>author</th>
+          <th>pages</th>
+          <th>read</th>
+        </tr>
+      </table>
+    </div>
+    <input type="button" value="New Book" id="display-form">
+    <div class="add-books">
+      <form action="">
+        <label for="title">Title
+          <input type="text" name="title" id="title">
+        </label>        
+        <label for="author">Author
+          <input type="text" name="author" id="author">
+        </label>
+        <label for="pages">Number of pages
+          <input id="pages" type="number" name="pages" min="0">
+        </label>
+        <label for="read">
+          <input type="checkbox" name="read" id="read">Read
+        </label>
+        <input type="button" value="submit" id="submit">
+      </form>
+    </div>
+  </main>
+</body>
+<script src="library.js"></script>
+<script src="main.js"></script>
+</html>
