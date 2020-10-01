@@ -7,7 +7,7 @@ const readCheckbox = document.querySelector("#read")
 const displayFormButton = document.querySelector('#display-form')
 const formDiv = document.querySelector('.add-books')
 const form = document.querySelector('form')
-const tableHeader = booksTable.children[0]
+const tableHeader = document.querySelector(".header-row")
 
 let myLibrary = []
 
@@ -31,6 +31,8 @@ function addBookToLibrary(book) {
   booksTable.appendChild(tableHeader)
   updateLibrary()
   formDiv.hidden = true
+  displayFormButton.hidden = false
+  booksTable.hidden = false
 }
 
 function updateLibrary() {
@@ -48,6 +50,7 @@ function updateLibrary() {
     if (book.read == "Already read") {
       newRow.classList.add('already-read')
     }
+    newRow.classList.add('book')
     newRow = addDeleteButton(newRow)
     booksTable.appendChild(newRow)
   })
@@ -75,6 +78,9 @@ function deleteBook(bookId) {
       myLibrary.splice(i, 1)
     }
   }
+  if (myLibrary.length == 0) {
+    booksTable.hidden = true
+  }
 }
 
 button.addEventListener('click', () => {
@@ -85,6 +91,7 @@ button.addEventListener('click', () => {
 
 displayFormButton.addEventListener('click', () => {
   formDiv.hidden = false
+  displayFormButton.hidden = true
 })
 
 
