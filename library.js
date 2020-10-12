@@ -63,7 +63,9 @@ function addDeleteButton(tableRow) {
   deleteButton.setAttribute('href', '#')
   deleteButton.setAttribute('data-delete', tableRow.getAttribute('data-id'))
   deleteButton.addEventListener('click', (a) => {
-    deleteBook(a.target.getAttribute('data-delete'))
+    if (confirm(`Are you sure you want to delete ${tableRow.querySelectorAll('td')[1].textContent}?`)) {
+      deleteBook(a.target.getAttribute('data-delete'))
+    }
   })
   tableColumn.appendChild(deleteButton)
   tableRow.appendChild(tableColumn)
