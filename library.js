@@ -13,14 +13,12 @@ let myLibrary = []
 
 formDiv.hidden = true
 
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  if (read) {
-    this.read = "Already read"
-  }else {
-    this.read = "Not read yet"
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    read ? this.read = "Already read" : this.read = "Not read yet"
   }
 }
 
